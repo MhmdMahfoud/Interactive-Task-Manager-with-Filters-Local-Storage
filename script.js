@@ -29,3 +29,7 @@ function renderTasks() {
             saveTasks();
             renderTasks();
         });
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
+        editBtn.style.background = "#ffc107"; // Yellow
+        editBtn.addEventListener("click", () => editTask(index));
