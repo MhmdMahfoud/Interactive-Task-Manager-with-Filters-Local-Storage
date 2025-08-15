@@ -10,4 +10,22 @@ function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 function renderTasks() {
-    taskList.innerHTML = "";
+    taskList.innerHTML = "";}
+    let filteredTasks = tasks.filter(task => {
+        if (currentFilter === "completed") return task.completed;
+        if (currentFilter === "pending") return !task.completed;
+        return true;
+    });
+    filteredTasks.forEach((task, index) => {
+        const li = document.createElement("li");
+        li.className = task.completed ? "completed" : "";
+        const span = document.createElement("span");
+        span.textContent = task.text;
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = task.completed;
+        checkbox.addEventListener("change", () => {
+            task.completed = !task.completed; // Toggle status
+            saveTasks();
+            renderTasks();
+        });
