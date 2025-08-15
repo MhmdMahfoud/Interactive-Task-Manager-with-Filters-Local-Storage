@@ -59,3 +59,15 @@ button:hover { background: #0056b3; }
     text-decoration: line-through;
     color: gray;
 }
+.filters {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+.filters button {
+    background: #ccc;
+}
+.filters button.active {
+    background: #007bff;
+    color: white;
+}
