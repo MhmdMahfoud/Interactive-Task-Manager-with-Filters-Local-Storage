@@ -49,4 +49,21 @@ function editTask(index) {
     const li = taskList.children[index]; 
     const task = tasks[index];
     li.innerHTML = ""; 
+    const input = document.createElement("input");
+    input.type = "text";
+    input.value = task.text;
+    const saveBtn = document.createElement("button");
+    saveBtn.textContent = "Save";
+    saveBtn.addEventListener("click", () => {
+        if (input.value.trim() === "") {
+            alert("Task cannot be empty");
+            return;
+        }
+        task.text = input.value.trim(); 
+        saveTasks();
+        renderTasks();
+    });
 
+    li.appendChild(input);
+    li.appendChild(saveBtn);
+}
