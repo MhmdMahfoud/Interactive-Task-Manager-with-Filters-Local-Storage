@@ -45,4 +45,8 @@ function renderTasks() {
         taskList.appendChild(li);
     });
 }
+function editTask(index) {
+    const li = taskList.children[index]; 
+    const task = tasks[index];
+    li.innerHTML = ""; 
 
