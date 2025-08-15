@@ -67,3 +67,30 @@ function editTask(index) {
     li.appendChild(input);
     li.appendChild(saveBtn);
 }
+taskForm.addEventListener("submit", (e) => {
+    e.preventDefault(); 
+
+    if (taskInput.value.trim() === "") {
+        errorMsg.textContent = "Please enter a task";
+        return;
+    }
+
+    errorMsg.textContent = ""; 
+    tasks.push({ text: taskInput.value.trim(), completed: false }); // Add new task
+    taskInput.value = ""; 
+    saveTasks();
+    renderTasks();
+});
+filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        
+        filterButtons.forEach(b => b.classList.remove("active"));
+
+  
+        btn.classList.add("active");
+
+      
+        currentFilter = btn.dataset.filter;
+        renderTasks();
+    });
+});
