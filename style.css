@@ -17,3 +17,14 @@ h1 { margin: 20px 0;
     width: 320px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+.task-form {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+.task-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
