@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>LocalStorage Task App</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LocalStorage Task App</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Task Manager</h1>
+
+<h1>Task Manager</h1>
 <div class="container">
-    <form class="task-form">
-        <input type="text" class="task-input" placeholder="Add a new task">
+    <form id="taskForm">
+        <input type="text" id="taskInput" placeholder="Add a new task">
         <button type="submit">Add</button>
     </form>
-    <div class="error-msg"></div>
-    <ul class="task-list"></ul>
+    <div class="error" id="errorMsg"></div>
+    <ul id="taskList"></ul>
     <div class="filters">
         <button data-filter="all" class="active">All</button>
         <button data-filter="completed">Completed</button>
         <button data-filter="pending">Pending</button>
     </div>
 </div>
+
+<script src="script.js"></script>
 </body>
 </html>
