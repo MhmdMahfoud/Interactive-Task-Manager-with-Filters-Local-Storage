@@ -41,3 +41,8 @@ function renderTasks() {
             saveTasks();
             renderTasks();
         });
+        li.append(checkbox, span, editBtn, deleteBtn);
+        taskList.appendChild(li);
+    });
+}
+
