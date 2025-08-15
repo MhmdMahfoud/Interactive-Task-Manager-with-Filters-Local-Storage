@@ -9,3 +9,5 @@ let currentFilter = "all";
 function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
+function renderTasks() {
+    taskList.innerHTML = "";
