@@ -33,3 +33,11 @@ function renderTasks() {
         editBtn.textContent = "Edit";
         editBtn.style.background = "#ffc107"; // Yellow
         editBtn.addEventListener("click", () => editTask(index));
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.style.background = "#dc3545"; // Red
+        deleteBtn.addEventListener("click", () => {
+            tasks.splice(index, 1); 
+            saveTasks();
+            renderTasks();
+        });
