@@ -42,3 +42,20 @@ button:hover { background: #0056b3; }
     font-size: 12px;
     margin-bottom: 10px;
 }
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+.task-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fafafa;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+.task-list li.completed span {
+    text-decoration: line-through;
+    color: gray;
+}
